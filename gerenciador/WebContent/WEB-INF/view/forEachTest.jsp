@@ -11,4 +11,4 @@
   </body>
 </html>
 
-//aqui nada mais é do que um laço que irá iterar de 1 até 10 pulando de 2 em 2
+<!-- aqui nada mais é do que um laço que irá iterar de 1 até 10 pulando de 2 em 2 -->
