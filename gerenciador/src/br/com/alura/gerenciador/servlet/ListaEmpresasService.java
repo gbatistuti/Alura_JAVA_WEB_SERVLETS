@@ -19,24 +19,39 @@ import br.com.alura.gerenciador.modelo.Empresa;
 public class ListaEmpresasService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		List<Empresa> empresas = new Banco().getEmpresas();
+
+		String valor = request.getHeader("Accept");
 		
-		XStream xstream = new XStream();
-		xstream.alias("empresa", Empresa.class);
-		String xml = xstream.toXML(empresas);
-		
-		response.setContentType("application/xml");
-		response.getWriter().print(xml);
-		
-//		Gson gson = new Gson();
-//		String json = gson.toJson(empresas);
-//		
-//		response.setContentType("application/json");
-//		response.getWriter().print(json);
-		
-		
+		System.out.println(valor);
+
+		if (valor.contains("xml")) {
+
+			XStream xstream = new XStream();
+			xstream.alias("empresa", Empresa.class);
+			String xml = xstream.toXML(empresas);
+
+			response.setContentType("application/xml");
+			response.getWriter().print(xml);
+
+		} else if (valor.endsWith("json")) {
+
+			Gson gson = new Gson();
+			String json = gson.toJson(empresas);
+
+			response.setContentType("application/json");
+			response.getWriter().print(json);
+
+		} else {
+
+			response.setContentType("application/json");
+			response.getWriter().print("{'message:' 'no content'}");
+
+		}
+
 	}
 
 }
