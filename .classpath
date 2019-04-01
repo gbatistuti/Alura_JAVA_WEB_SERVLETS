@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="gerenciador/src"/>
+	<classpathentry kind="lib" path="gerenciador/WebContent/WEB-INF/lib/gson-2.8.5.jar"/>
+	<classpathentry kind="lib" path="gerenciador/WebContent/WEB-INF/lib/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="gerenciador/WebContent/WEB-INF/lib/xmlpull-1.1.3.1.jar"/>
+	<classpathentry kind="lib" path="gerenciador/WebContent/WEB-INF/lib/xstream-1.4.10.jar"/>
+	<classpathentry kind="output" path="gerenciador/build/classes"/>
+</classpath>
